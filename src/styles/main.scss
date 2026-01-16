@@ -1,0 +1,11 @@
+// Переменные, миксины, функции
+@use "helpers/_variables";
+@use "helpers/_mixins";
+
+// Основное
+@use "base/_fonts";
+@use "base/_general";
+
+// БЭМ-блоки
+@use "../blocks/components/components";
+@use "../blocks/modules/modules";

@@ -1,0 +1,22 @@
+// шрифты
+$ff-sans: 'PT Sans', sans-serif;
+$ff-bebas: 'Bebas Neue', sans-serif;
+
+// media
+$media-list: (
+    'xs': 500,
+    'mobile': 767,
+    'tablet': 1023,
+    'laptop': 1350,
+    'large': 1800,
+    'full': 2000,
+);
+
+// Цвета
+$c-white: #fff;
+$c-black: #000;
+$c-accent: #000;
+
+// переходы
+$tr: .3s linear;
+$tr-long: .5s linear;
