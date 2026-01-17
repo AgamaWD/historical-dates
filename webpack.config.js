@@ -7,7 +7,7 @@ module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
 
   return {
-	mode: argv.mode || 'development',
+	  mode: argv.mode || 'development',
     performance: {
       hints: false,
     },
@@ -39,10 +39,18 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.pug$/,
-			loader: 'pug-loader',
-  options: {
-    root: path.resolve(__dirname, 'src')
-  }
+          loader: 'pug-loader',
+          options: {
+            root: path.resolve(__dirname, 'src')
+          }
+        },
+        {
+          test: /\.css$/,
+          use: [
+            isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
+            'css-loader',
+            'postcss-loader',
+          ],
         },
         {
           test: /\.scss$/,

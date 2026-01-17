@@ -1,0 +1,73 @@
+-
+    const defaultTabsProps = {
+        classes: '',
+        tabsList: [
+            {
+                name: 'Наука',
+                yearFrom: '2015',
+                yearTo: '2022'
+            },
+            {
+                name: 'Кино',
+                yearFrom: '1987',
+                yearTo: '1991'
+            },
+            {
+                name: 'Литература',
+                yearFrom: '1992',
+                yearTo: '1997'
+            },
+            {
+                name: '',
+                yearFrom: '1999',
+                yearTo: '2004'
+            },
+            {
+                name: '',
+                yearFrom: '2000',
+                yearTo: '2005'
+            },
+            {
+                name: 'Наука',
+                yearFrom: '2015',
+                yearTo: '2022'
+            }
+        ]
+    }
+
+mixin tabs-block(props= defaultTabsProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultTabsProps.classes,
+            tabsList: props.tabsList ? props.tabsList : defaultTabsProps.tabsList
+        }
+
+    .tabs-block(class=checkProps.classes data-js="tabsBlock")&attributes(attributes)
+        .tabs-block__tabs
+            .tabs-block__list(data-js="tabsBlockList")
+                .swiper-wrapper
+                    - let tabsCount = 0
+                    - let tabsList = checkProps.tabsList
+                    - while(tabsCount < tabsList.length)
+                        - let tab = tabsList[tabsCount]
+                            .swiper-slide.tabs-block__tab(data-from=tab.yearFrom data-to=tab.yearTo data-js="tabsBlockTab")
+                                .tabs-block__num!= tabsCount + 1
+                                - if(tab.name.length > 0)
+                                    .tabs-block__name!= tab.name
+
+                        - tabsCount++
+
+        .tabs-block__controls
+            .tabs-block__fraction
+            .tabs-block__arrows
+                .tabs-block__control(data-js="tabsBlockPrev")
+                    svg
+                        use(xlink:href=`img/sprites/sprite.svg#slider_arrow_left`)
+
+                .tabs-block__control(data-js="tabsBlockNext")
+                    svg
+                        use(xlink:href=`img/sprites/sprite.svg#slider_arrow_right`)
+
+        .tabs-block__slides(data-js="tabsBlockSlides")
+            .swiper-wrapper
+                block

@@ -1,0 +1,13 @@
+@use "../helpers/_variables" as *;
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+.hd-container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}

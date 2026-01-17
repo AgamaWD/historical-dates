@@ -1,6 +1,56 @@
+@use "../../../styles/helpers/variables" as *;
+
 .hd-main {
-    svg {
-        width: 10px;
-        height: 20px;
+    font-family: $ff-sans;
+    background-color: $c-main-bg;
+    padding-left: calc((100% - 1440px) / 3);
+
+    &__content {
+        position: relative;
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-width: 0px 1px 0px 1px;
+        border-color: $c-border;
+        border-style: solid;
+        padding: 106px 80px 50px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: $c-border;
+        }
+    }
+
+    &__title {
+        position: relative;
+        align-self: flex-start;
+        font-weight: 700;
+        font-size: 56px;
+        line-height: 120%;
+        color: $c-accent;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: -80px;
+            top: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, #3877EE -5%, #EF5DA8 85%), $c-accent;
+        }
+    }
+
+    &__tabs {
+        margin-top: -89px;
     }
 }

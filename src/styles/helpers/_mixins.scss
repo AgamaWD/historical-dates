@@ -1,6 +1,9 @@
+@use "sass:map";
+@use '_variables' as *;
+
 @function _get-media-width($width, $is_max) {
-	@if map-get($media-list, $width) {
-		$width: map-get($media-list, $width);
+	@if map.get($media-list, $width) {
+		$width: map.get($media-list, $width);
 
 		@if $is_max {
 			@return $width;

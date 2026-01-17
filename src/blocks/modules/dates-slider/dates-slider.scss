@@ -1,0 +1,63 @@
+@use '../../../styles/helpers/variables' as *;
+
+.dates-slider {
+    position: relative;
+
+    &__slider {
+        overflow: hidden;
+        cursor: grab;
+        user-select: none;
+    }
+
+    &__title {
+        font-family: $ff-bebas;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 120%;
+        text-transform: uppercase;
+        color: $c-accent-light;
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+        color: $c-accent;
+    }
+
+    &__control {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $c-accent-light;
+        box-shadow: 0px 0px 15px 0px rgba(56, 119, 238, 0.1);
+        background-color: $c-white;
+        border-radius: 100%;
+        z-index: 5;
+        cursor: pointer;
+        transition: all $tr;
+
+        &.swiper-button-disabled {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &--prev {
+            left: -40px;
+        }
+
+        &--next {
+            right: -40px;
+        }
+
+        svg {
+            width: 5px;
+            height: 10px;
+        }
+    }
+}
