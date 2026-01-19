@@ -48,11 +48,11 @@ mixin dates-slider(props= defaultDatesSliderProps)
     .dates-slider(class=checkProps.classes data-js="datesSlider")&attributes(attributes)
         .dates-slider__control.dates-slider__control--prev(data-js="datesSliderPrev")
             svg
-                use(xlink:href=`img/sprites/sprite.svg#slider_arrow_left`)
+                use(xlink:href=`/sprite.svg#slider_arrow_left`)
 
         .dates-slider__control.dates-slider__control--next(data-js="datesSliderNext")
             svg
-                use(xlink:href=`img/sprites/sprite.svg#slider_arrow_right`)
+                use(xlink:href=`/sprite.svg#slider_arrow_right`)
 
         .dates-slider__slider(data-js="datesSliderSlider")
             .swiper-wrapper

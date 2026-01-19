@@ -4,23 +4,19 @@ $ff-bebas: 'Bebas Neue', sans-serif;
 
 // media
 $media-list: (
-    'xs': 500,
     'mobile': 767,
-    'tablet': 1023,
-    'laptop': 1350,
-    'large': 1800,
-    'full': 2000,
+    'laptop': 1800,
 );
 
 // Цвета
 $c-white: #fff;
-//$c-black: #000;
 $c-accent: #42567A;
 $c-accent-light: #3877EE;
 $c-border: #E2E5EC;
 $c-border-dark: #D0D5E0;
 $c-main-bg: #F4F5F9;
+$c-text-from: #5D5FEF;
+$c-text-to: #EF5DA8;
 
 // переходы
 $tr: .3s linear;
-$tr-long: .5s linear;

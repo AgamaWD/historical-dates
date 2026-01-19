@@ -1,9 +1,18 @@
-@use "../../../styles/helpers/variables" as *;
+@use "../../styles/helpers/variables" as *;
+@use "../../styles/helpers/mixins" as *;
 
 .hd-main {
     font-family: $ff-sans;
     background-color: $c-main-bg;
     padding-left: calc((100% - 1440px) / 3);
+
+    @include max(laptop) {
+        padding: 0 10px;
+    }
+
+    @include max(mobile) {
+        padding: 0;
+    }
 
     &__content {
         position: relative;
@@ -17,7 +26,15 @@
         border-width: 0px 1px 0px 1px;
         border-color: $c-border;
         border-style: solid;
-        padding: 106px 80px 50px;
+        padding: calc(40px + 6vh) 80px 40px;
+
+        @include max(laptop) {
+            padding: 40px;
+        }
+
+        @include max(mobile) {
+            padding: 60px 20px 15px;
+        }
 
         &:before {
             content: '';
@@ -28,6 +45,10 @@
             left: 50%;
             transform: translateX(-50%);
             background-color: $c-border;
+
+            @include max(mobile) {
+                content: none;
+            }
         }
     }
 
@@ -39,6 +60,14 @@
         line-height: 120%;
         color: $c-accent;
 
+        @include max(laptop) {
+            font-size: 42px;
+        }
+
+        @include max(mobile) {
+            font-size: 20px;
+        }
+
         &:before {
             content: '';
             position: absolute;
@@ -47,10 +76,27 @@
             width: 5px;
             height: 100%;
             background: linear-gradient(180deg, #3877EE -5%, #EF5DA8 85%), $c-accent;
+
+            @include max(laptop) {
+                left: -40px;
+            }
+
+            @include max(mobile) {
+                content: none;
+            }
         }
+
     }
 
     &__tabs {
         margin-top: -89px;
+
+        @include max(laptop) {
+            margin-top: -40px;
+        }
+
+        @include max(mobile) {
+            margin-top: 56px;
+        }
     }
 }

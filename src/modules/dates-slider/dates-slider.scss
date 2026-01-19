@@ -1,0 +1,125 @@
+@use '../../styles/helpers/variables' as *;
+@use '../../styles/helpers/mixins' as *;
+
+.dates-slider {
+    position: relative;
+
+    &__slider {
+        overflow: hidden;
+        cursor: grab;
+        user-select: none;
+
+        @include max(mobile) {
+            margin-right: -20px;
+            padding-right: 20px;
+        }
+    }
+
+    &__slide {
+        @include max(mobile) {
+            opacity: 0.4;
+            transition: opacity $tr;
+
+            &.swiper-slide-active {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__slide.swiper-slide-active~.swiper-slide-next:last-child {
+        opacity: 1;
+    }
+
+    &__title {
+        font-family: $ff-bebas;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 120%;
+        text-transform: uppercase;
+        color: $c-accent-light;
+
+        @include max(laptop) {
+            font-size: 22px;
+        }
+
+        @include max(mobile) {
+            font-size: 16px;
+        }
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1.5em;
+        color: $c-accent;
+        margin-top: 15px;
+
+        @include max(laptop) {
+            font-size: 18px;
+        }
+
+        @include max(mobile) {
+            font-size: 14px;
+        }
+    }
+
+    &__control {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $c-accent-light;
+        box-shadow: 0px 0px 15px 0px rgba(56, 119, 238, 0.1);
+        background-color: $c-white;
+        border-radius: 100%;
+        z-index: 5;
+        cursor: pointer;
+        transition: all $tr;
+
+        @include max(laptop) {
+            width: 32px;
+            height: 32px;
+            box-shadow: 0px 0px 12px 0px rgba(56, 119, 238, 0.1);
+        }
+
+        @include max(mobile) {
+            display: none;
+        }
+
+        &.swiper-button-disabled {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        &--prev {
+            left: -40px;
+
+            @include max(laptop) {
+                left: -36px;
+            }
+        }
+
+        &--next {
+            right: -40px;
+
+            @include max(laptop) {
+                right: -36px;
+            }
+        }
+
+        svg {
+            width: 7px;
+            height: 11.5px;
+
+            @include max(laptop) {
+                width: 5.6px;
+                height: 9.2px;
+            }
+        }
+    }
+}

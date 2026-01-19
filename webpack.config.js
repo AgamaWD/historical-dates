@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin').default;
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
@@ -62,23 +63,11 @@ module.exports = (env, argv) => {
           ],
         },
         {
-          test: /\.(png|jpg|gif)$/i,
+          test: /\.svg$/,
           type: 'asset/resource',
-        },
-        {
-            test: /\.svg$/,
-            use: [
-                {
-                loader: 'svg-sprite-loader',
-                options: {
-                    plainSprite: true,
-                    spriteAttrs: {
-                    id: 'icons',
-                    xmlns: 'http://www.w3.org/2000/svg'
-                    }
-                }
-                }
-            ]
+          generator: {
+            filename: 'assets/[name].[ext][query]'
+          }
         }
       ],
     },
@@ -98,6 +87,17 @@ module.exports = (env, argv) => {
       ...(isProduction ? [new MiniCssExtractPlugin({
         filename: '[name].[contenthash].css',
       })] : []),
+      new SVGSpritemapPlugin('src/assets/svg/**/*.svg', {
+      output: { 
+        filename: 'sprite.svg',
+        svg: { 
+          dimensions: false,
+        }
+      },
+        sprite: {
+          prefix: ''
+      }
+    })
     ],
   };
 };
