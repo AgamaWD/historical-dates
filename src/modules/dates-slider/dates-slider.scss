@@ -32,8 +32,8 @@
 
     &__title {
         font-family: $ff-bebas;
-        font-weight: 400;
-        font-size: 25px;
+        font-weight: 600;
+        font-size: 18px;
         line-height: 120%;
         text-transform: uppercase;
         color: $c-accent-light;
@@ -49,9 +49,9 @@
 
     &__text {
         font-weight: 400;
-        font-size: 20px;
+        font-size: 16px;
         line-height: 1.5em;
-        color: $c-accent;
+        color: $c-text;
         margin-top: 15px;
 
         @include max(laptop) {

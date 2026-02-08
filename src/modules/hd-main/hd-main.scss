@@ -4,6 +4,7 @@
 .hd-main {
     font-family: $ff-sans;
     background-color: $c-main-bg;
+    background: radial-gradient(circle, #0a0a2e 0%, #000 70%);
     padding-left: calc((100% - 1440px) / 3);
 
     @include max(laptop) {
@@ -26,7 +27,7 @@
         border-width: 0px 1px 0px 1px;
         border-color: $c-border;
         border-style: solid;
-        padding: calc(40px + 6vh) 80px 40px;
+        padding: 40px 80px;
 
         @include max(laptop) {
             padding: 40px;
@@ -56,7 +57,7 @@
         position: relative;
         align-self: flex-start;
         font-weight: 700;
-        font-size: 56px;
+        font-size: 48px;
         line-height: 120%;
         color: $c-accent;
 
@@ -75,7 +76,7 @@
             top: 0;
             width: 5px;
             height: 100%;
-            background: linear-gradient(180deg, #3877EE -5%, #EF5DA8 85%), $c-accent;
+            background: linear-gradient(180deg, $c-text-from -5%, $c-accent 85%), $c-accent;
 
             @include max(laptop) {
                 left: -40px;
@@ -89,7 +90,7 @@
     }
 
     &__tabs {
-        margin-top: -89px;
+        margin-top: -120px;
 
         @include max(laptop) {
             margin-top: -40px;

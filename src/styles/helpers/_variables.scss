@@ -10,13 +10,15 @@ $media-list: (
 
 // Цвета
 $c-white: #fff;
-$c-accent: #42567A;
-$c-accent-light: #3877EE;
-$c-border: #E2E5EC;
-$c-border-dark: #D0D5E0;
-$c-main-bg: #F4F5F9;
-$c-text-from: #5D5FEF;
-$c-text-to: #EF5DA8;
+$c-black: #000;
+$c-accent: #00d4ff;
+$c-accent-light: #75e7fd;
+$c-border: #c1ddf3;
+$c-border-dark: rgba(0, 212, 255, 0.4);
+$c-main-bg: #0a0a2e;
+$c-text-from: #4b0082;
+$c-text-to: #b0e0e6;
+$c-text: #e0e8ff;
 
 // переходы
 $tr: .3s linear;

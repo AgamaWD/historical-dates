@@ -3,34 +3,52 @@
         classes: '',
         tabsList: [
             {
-                name: 'Наука',
-                yearFrom: '2015',
-                yearTo: '2022'
+                name: 'Меркурий',
+                yearFrom: '15329',
+                yearTo: '4879',
+                background: 'radial-gradient(#8c7853, #654321)' 
             },
             {
-                name: 'Кино',
-                yearFrom: '1987',
-                yearTo: '1991'
+                name: 'Венера',
+                yearFrom: '38025',
+                yearTo: '12104',
+                background: 'radial-gradient(#ffc649, #ff8c00)'
             },
             {
-                name: 'Литература',
-                yearFrom: '1992',
-                yearTo: '1997'
+                name: 'Земля',
+                yearFrom: '40075',
+                yearTo: '12742',
+                background: 'radial-gradient(#4a90e2, #1e6091)'
             },
             {
-                name: '',
-                yearFrom: '1999',
-                yearTo: '2004'
+                name: 'Марс',
+                yearFrom: '21297',
+                yearTo: '12742',
+                background: 'radial-gradient(#cd5c5c, #8b4513)'
             },
             {
-                name: '',
-                yearFrom: '2000',
-                yearTo: '2005'
+                name: 'Юпитер',
+                yearFrom: '439420',
+                yearTo: '139820',
+                background: 'radial-gradient(#d8ca9d, #f4a261)'
             },
             {
-                name: 'Наука',
-                yearFrom: '2015',
-                yearTo: '2022'
+                name: 'Сатурн',
+                yearFrom: '	365882',
+                yearTo: '116460',
+                background: 'radial-gradient(#f9d71c, #daa520)'
+            },
+            {
+                name: 'Уран',
+                yearFrom: '159354',
+                yearTo: '50724',
+                background: 'radial-gradient(#87cefa, #4a9fd8)'
+            },
+            {
+                name: 'Нептун',
+                yearFrom: '154706',
+                yearTo: '49244',
+                background: 'radial-gradient(#4169e1, #000080)'
             }
         ]
     }
@@ -54,7 +72,7 @@ mixin tabs-block(props= defaultTabsProps)
                     - while(tabsCount < tabsList.length)
                         - let tab = tabsList[tabsCount]
                             .swiper-slide.tabs-block__tab(data-from=tab.yearFrom data-to=tab.yearTo data-js="tabsBlockTab")
-                                .tabs-block__num!= tabsCount + 1
+                                .tabs-block__num(style=`background:${tab.background}`)!= tabsCount + 1
                                 - if(tab.name.length > 0)
                                     .tabs-block__name!= tab.name
 
